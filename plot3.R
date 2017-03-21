@@ -72,7 +72,7 @@ with(dadosN, {
         lines(dia, Sub_metering_2, col = "red")
         lines(dia, Sub_metering_3, col = "blue")
         legend("topright", legend = names(dadosN[,8:10]), 
-        col=c("black", "red", "blue"), lty=c(1,1,1))
+        col=c("black", "red", "blue"), lty=c(1,1,1), cex=0.75)
         
         
 })
