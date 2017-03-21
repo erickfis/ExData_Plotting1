@@ -9,7 +9,7 @@
 - one could filter it before loading in linux bash, as follows:
 
         $ sed -n "1,2p" originalData.txt > newData.txt # this keeps the first 2 lines, for keeping the colnames
-        $ grep -e "^[12]/2/2007" hpc.txt >> newData.txt 
+        $ grep -e "^[12]/2/2007" originalData.txt >> newData.txt 
 
 
 Then
