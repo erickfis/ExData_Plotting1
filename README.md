@@ -10,7 +10,6 @@
 
         $ sed -n "1,2p" originalData.txt > newData.txt # this keeps the first 2 lines, for keeping the colnames
         $ grep -e "^[12]/2/2007" hpc.txt >> newData.txt 
-        $ grep -E "^([12]|12)/2/2007"  hpc.txt | less        
 
 
 Then

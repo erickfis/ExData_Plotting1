@@ -5,7 +5,6 @@
 # - one could filter it before loading in linux bash, as follows:
 #         $ sed -n "1,5p" dados.txt > newData.txt
 #         $ grep -e "^[12]/2/2007" hpc.txt >> newData.txt 
-#         $ grep -E "^([12]|12)/2/2007"  hpc.txt | less        
 # 
 # Then
 # - loads the entire data throught fread(), which is the fastest way
