@@ -2,7 +2,7 @@
 
 # Exploratory Data Analisys - week 1 Project
 
-# What this scrit does:
+# What this script does:
 
 - downloads the data, extracts and loads it into R
 - we assume the filtering will be made after data is loaded.
