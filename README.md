@@ -2,7 +2,7 @@
 
 # Exploratory Data Analisys - week 1 Project
 
-# What this script does:
+## What this series of scripts (plot[1..4].R) does:
 
 - downloads the data, extracts and loads it into R
 - we assume the filtering will be made after data is loaded.

@@ -1,4 +1,4 @@
-# #What this scrit does:
+# #What this script does:
 
 # - downloads the data, extracts and loads it into R
 # - we assume the filtering will be made after data is loaded.
@@ -13,7 +13,7 @@
 # - mutates the data to criate cols dataN and dia, which are the time in a proper format
 # - selects the colums needed in the plots
 # - filters the data for the desired daysz
-# - plots the throught the first to the fourth plot, while saving each one to a png file
+# - plots the first plot it to a png file
 
 
 fileUrl = "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
@@ -69,70 +69,6 @@ hist(dadosN$Global_active_power, col = "red", main = "Global Active Power", xlab
 dev.copy(png, file="plot1.png")
 dev.off()
 
-# gráfico 2
-# plots the second plot, which is a line plot
-# then saves it to a png file
-
-with(dadosN, {
-        plot(dia, Global_active_power, type="n", xlab = "", 
-                ylab="Global Active Power (kilowatts)")
-        lines(dia, Global_active_power)   
-})
-
-dev.copy(png, file="plot2.png")
-dev.off()
-
-
-# gráfico 3
-# plots the third plot, which is a multivariate line plot
-# then saves it to a png file
-
-with(dadosN, {
-        plot(dia, Sub_metering_1, type="n", xlab = "", 
-             ylab="Energy Sub Metering")
-        lines(dia, Sub_metering_1, col = "black")   
-        lines(dia, Sub_metering_2, col = "red")
-        lines(dia, Sub_metering_3, col = "blue")
-        legend("topright", legend = names(dadosN[,8:10]), 
-        col=c("black", "red", "blue"), lty=c(1,1,1))
-        
-        
-})
-
-dev.copy(png, file="plot3.png")
-dev.off()
-
-# gráfico 4
-# plots the last plot, which is a panel of the last three
-# then saves it to a png file
-
-with(dadosN, {
-        
-        par(mfrow=c(2,2))
-        
-        plot(dia, Global_active_power, type="n", xlab = "", 
-             ylab="Global Active Power (kilowatts)")
-        lines(dia, Global_active_power, col = "black")   
-        
-        plot(dia, Voltage, type="n", xlab = "datetime", 
-             ylab="Voltage")
-        lines(dia, Voltage, col = "black")   
-        
-        plot(dia, Sub_metering_1, type="n", xlab = "", 
-             ylab="Energy Sub Metering")
-        lines(dia, Sub_metering_1, col = "black")   
-        lines(dia, Sub_metering_2, col = "red")
-        lines(dia, Sub_metering_3, col = "blue")
-        legend("topright", legend = names(dadosN[,8:10]), 
-               col=c("black", "red", "blue"), lty=c(1,1,1))
-        
-        
-        plot(dia, Global_reactive_power, type="n", xlab = "datetime")
-        lines(dia, Global_reactive_power, col = "black")   
-})
-
-dev.copy(png, file="plot4.png")
-dev.off()
 
 
 
